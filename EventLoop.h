@@ -28,7 +28,7 @@ public:
 
     bool isInLoopThread() const { return threadId_ == muduo::CurrentThread::tid(); }
 
-    EventLoop* getEventLoopOfCurrentThread();
+    static EventLoop* getEventLoopOfCurrentThread();
 private:
     void abortNotInLoopThread();
 

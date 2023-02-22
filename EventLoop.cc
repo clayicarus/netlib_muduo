@@ -4,7 +4,7 @@
 
 using namespace netlib_muduo;
 
-__thread EventLoop *t_loopInThisThread = 0;
+__thread EventLoop *t_loopInThisThread = nullptr;
 
 EventLoop::EventLoop()
     : looping_(false), threadId_(muduo::CurrentThread::tid())
@@ -20,7 +20,7 @@ EventLoop::EventLoop()
 
 EventLoop::~EventLoop() 
 {
-    assert(!looping_);  // definately not null
+    assert(!looping_);  // definitely not null
     t_loopInThisThread = nullptr;
 }
 
